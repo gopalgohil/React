@@ -1,0 +1,177 @@
+---------------------------React--------------------------------------  
+
+1) What is React?
+=> React is a User Interface (UI) Library.
+=> It is a tool for building a UI Componets.
+
+
+2) What is JSX?
+=> JSX stand for Javascript XML(extension).
+=> ALL React code is written in JSX.
+
+3) React DOM Render.
+=> The method ReactDom.render() is used to render(display) 
+   HTML element.
+
+4) How to Install React JS?
+=>  1) first to Insatll NodeJS
+=>  2) To write in Vscode Terminal node -v and npm -v
+       and Write a npm install
+=>  3) create a react-app command = npx create-react-app folderName 
+
+5) ------------------Window Basic Command in cmd?-------------------
+
+=>  mkdir -create a folder
+=>  rmdir -remove a folder
+=>  cat>fileName or type null>fileName -create a New File.
+=>  pwd - print working directory
+=>  del -delete a particular file
+=>  cls -clear Terminal
+=>  dir -To show in directory on curent folder
+=> ./filename -curent directory ni under   
+   Example:  components ni module1.js Name File
+=>  cd.. - privies directory show
+
+
+6)-----------------name export and default export------------------
+
+=> module1.mjs   
+
+const a="harry";
+const b="gopal";
+const c="vihsal";
+
+export default c;
+export{a};
+export{b};
+
+=> module2.mjs
+
+import ui,{a, b} from './module1.mjs'
+console.log(ui);
+console.log(a,b);
+
+1) shortcut Command 
+
+=> write a (rfc) in App.js
+
+import React from 'react'
+
+export default function App() {
+  return (
+    <div>
+      <h1>Hello</hello>
+    </div>
+  )
+}
+
+7)  ---------------------useState----------------------------------
+
+                         App.js
+
+import React from 'react'
+import Navbar from './components/Navbar'
+import RulesHook from './components/RulesHook'
+const App = (props) => {
+  return (
+    <>
+      <h1>Hello</h1>
+      <RulesHook />
+    </>
+  )
+}
+
+export default App
+
+2)                     RulesHook.js
+
+import React, { useState } from 'react'
+
+function RulesHook() {
+    const [a]=useState(10);
+  return (
+    <div>
+      <h1>{a}</h1>
+    </div>
+  )
+}
+
+export default RulesHook
+
+8) ------------------------Componets--------------------------------
+ 
+=> React Componets is independent and reusable bit of code.
+=> There are Two Type of React Components : 1) Class Components
+                                            2) Function Componetns
+
+1)  class Components : 
+=>                 class components must include the extends React.Componets
+
+Example of class components:
+          
+ class extends React.Components{
+            render(){
+            return  <h1> Hello </h1>
+     }
+}
+
+2) function components :
+                    function components can be written using more less code,are easier to understand.
+
+Example  Explain:
+                 1) create components folder
+                 2) Component names must be capitalized
+                 2) in This folder create new file Navbar.js
+                 4) by default create App.js in src folder
+
+
+1)---------------------------App.js----------------------------------
+                         
+import React from 'react'
+import Navbar from './components/Navbar'
+
+const App = (props) => {
+  return (
+    <>
+        <Navbar title="Gopal" aboutText="About Text" />
+    </>
+  )
+}
+2)-------------------------Navbar.js--------------------------------
+
+
+import React from 'react'
+
+export default function Navbar() {
+  return (
+    <>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="container-fluid">
+      <a className="navbar-brand" href="/">{props.title}</a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/">{props.aboutText}</a>
+          </li>
+        </ul>
+        <form className="d-flex" role="search">
+          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button className="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  </>
+  )
+}
+
+
+
+
